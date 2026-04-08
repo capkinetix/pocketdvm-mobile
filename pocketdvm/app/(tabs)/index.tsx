@@ -7,8 +7,11 @@ import { useRouter } from "expo-router"
 
 const router= useRouter();
 
+
+
 export default function Home() {
   return (
+    
     <Screen>
       <Text style={styles.header}>PocketDVM Portal</Text>
 
@@ -27,7 +30,7 @@ export default function Home() {
         </Text>
         <PrimaryButton
             title="View"
-            onPress={() => console.log("Navigate to Medicine Screen")}
+            onPress={() => router.push("/medication")}
             />
       </Card>
       <Card>
@@ -36,7 +39,16 @@ export default function Home() {
         </Text>
         <PrimaryButton
             title="View"
-            onPress={() => console.log("Navigate to appointments")}
+            onPress={() => router.push("/appointments")}
+            />
+      </Card>
+      <Card>
+        <Text style={styles.cardTitle}>
+          Fun API
+        </Text>
+        <PrimaryButton
+            title="View"
+            onPress={() => router.push("/api")}
             />
       </Card>
     </Screen>
